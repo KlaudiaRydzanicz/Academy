@@ -1,0 +1,34 @@
+<div class="add-lesson">
+  <form [formGroup]="addForm" (ngSubmit)="saveLesson()">
+    <ng-container>
+      <div class="form-group">
+        <div>
+        <label for="title">TitleName</label>
+        <input type="text" id="title"
+        formControlName="title">
+        </div>
+        <div>
+        <label for="order">Order</label>
+        <input type="number" id="order"
+        formControlName="order">
+        </div>
+        <div>
+        <label for="description">Description</label>
+        <textarea id="description"
+        formControlName="description"></textarea>
+        </div>
+        <div>
+        <label for="url">Url</label>
+        <input type="text" id="url"
+        formControlName="url">
+          </div>
+        <div>
+        <label for="estimatedDuration">Time</label>
+        <input type="number" id="estimatedDuration"
+        formControlName="estimatedDuration">
+          </div>
+      </div>
+    </ng-container>
+    <button class="btn btn-primary" type="submit" [disabled]="!addForm.valid">Submit</button>
+  </form>
+</div>

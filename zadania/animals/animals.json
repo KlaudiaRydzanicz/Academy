@@ -1,0 +1,75 @@
+[
+    {
+        "gatunek": "Ssaki",
+        "value": {
+            "nazwa": "Pies",
+            "nogi": 4,
+            "odglosy": "hau"
+        }
+    },
+    {
+        "gatunek": "Ssaki",
+        "value": {
+            "nazwa": "Kot",
+            "nogi": 4,
+            "odglosy": "miau"
+        }
+    },
+    {
+        "gatunek": "Ryby",
+        "value": {
+            "nazwa": "Karp",
+            "nogi": 0,
+            "odglosy": "brak"
+        }
+    },
+    {
+        "gatunek": "Ryby",
+        "value": {
+            "nazwa": "Sum",
+            "nogi": 0,
+            "odglosy": "plum :)"
+        }
+    },
+    {
+        "gatunek": "Ptaki",
+        "value": {
+            "nazwa": "Wrona",
+            "nogi": 2,
+            "odglosy": "kra"
+        }
+    },
+    {
+        "gatunek": "Gady",
+        "value": {
+            "nazwa": "Krokodyl",
+            "nogi": 4,
+            "odglosy": "klap :)"
+        }
+    },
+    {
+        "gatunek": "Gady",
+        "value": {
+            "nazwa": "Wąż",
+            "nogi": 0,
+            "odglosy": "ssss"
+        }
+    },
+    {
+        "gatunek": "Ssaki",
+        "value": {
+            "nazwa": "Wilk",
+            "nogi": 4,
+            "odglosy": "ału"
+        }
+    },
+    {
+        "gatunek": "Ptaki",
+        "value": {
+            "nazwa": "Sowa",
+            "nogi": 2,
+            "odglosy": "uhu"
+        }
+    }
+
+]

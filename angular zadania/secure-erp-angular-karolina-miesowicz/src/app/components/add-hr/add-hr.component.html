@@ -1,0 +1,24 @@
+<div class="form">
+  <div *ngIf="!submitted">
+    <form [formGroup]="addHrForm" (ngSubmit)="saveNewHr()">
+      <label for="name">Name: </label>
+      <input
+        type="text" class="form-control" id="name"
+        [(ngModel)]="hr.name" formControlName="name"/>
+      <label for="birthday">Birthday: </label>
+      <input
+        type="date" class="form-control" id="birthday"
+        [(ngModel)]="hr.birthday" formControlName="birthday"/>
+      <label for="department">Department: </label>
+      <input type="text" [(ngModel)]="hr.department" class="form-control" id="department"
+                formControlName="department" form="department" />
+      <label for="clearance">Clearance: </label>
+      <input type="number" class="form-control" formControlName="clearance" id="clearance" autocomplete="off" [(ngModel)]="hr.clearance"/>
+
+      <button type="submit" [disabled]="!addHrForm.valid" class="btn btn-success add-lesson-btn save-lesson-btn">Submit</button>
+    </form>
+  </div>
+  <div *ngIf="submitted">
+    <h4>You submitted new employee successfully!</h4>
+  </div>
+</div>

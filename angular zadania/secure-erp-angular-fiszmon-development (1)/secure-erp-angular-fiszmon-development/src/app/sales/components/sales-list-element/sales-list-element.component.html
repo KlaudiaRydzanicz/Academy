@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col" *ngIf="showName">Name</th>
+    <th scope="col">Price</th>
+    <th scope="col">Transaction date</th>
+    <th scope="col">Customer</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="col" *ngIf="showName">{{sale.product}}</th>
+    <td>{{sale.price}}</td>
+    <td>{{sale.transactionDate}}</td>
+    <td *ngIf="customer$ | async as customer">{{customer.name}}</td>
+  </tr>
+  </tbody>
+</table>

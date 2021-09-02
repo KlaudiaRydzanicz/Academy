@@ -1,0 +1,30 @@
+<div *ngIf="isLesson" class="edit-form">
+  <h4>Update Lesson {{currentLesson.title}}</h4>
+  <form>
+    <label for="title">Title</label>
+    <input type="text" class="form-control"
+    name="title" id='title' [(ngModel)]="currentLesson.title">
+
+    <label for="description">Description</label>
+    <textarea class="form-control" id="description"
+              name="description" [(ngModel)]="currentLesson.description"></textarea>
+    <label for="order">Order</label>
+    <input type="number" class="form-control"
+    id="order" name="order" [(ngModel)]="currentLesson.order">
+    <label for="url">URL</label>
+    <input type="text" class="form-control"
+    id="url" name="url" [(ngModel)]="currentLesson.url">
+    <label for="estimatedDuration">Time</label>
+    <input type="number" class="form-control"
+    id="estimatedDuration" name="estimatedDuration" [(ngModel)]="currentLesson.estimatedDuration">
+  </form>
+  <button class="btn btn-danger mr-2"
+          (click)="action()">
+    Delete Lesson
+  </button>
+</div>
+<button type="submit" class="btn btn-primary"
+        (click)="updateLesson()">
+  Update Lesson
+</button>
+

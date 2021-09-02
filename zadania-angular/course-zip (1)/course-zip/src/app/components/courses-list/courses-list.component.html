@@ -1,0 +1,27 @@
+<div class="list-row">
+  <div class="col-md-6">
+    <h4>Courses List</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let course of courses; let i = index"
+          [class.active]="i==currentIndex" (click)="setActiveCourse(course, i)"
+          routerLink="/detail/{{course.key}}">
+        {{course.name}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="col-md-6">
+  <div *ngIf="currentCourse">
+    <app-course-detail (refreshList)="refreshList()"
+                       [course]="currentCourse">
+    </app-course-detail>
+  </div>
+</div>
+
+<div *ngIf="!currentCourse">
+  <br/>
+  <p>Please click on a Tutorial...</p>
+</div>
+
+

@@ -1,0 +1,12 @@
+<div class="modal-header">
+  <h4 class="modal-title">City</h4>
+</div>
+<div class="modal-body">
+  <p>Name: {{city.name}}!</p>
+  <p>Location{{city.location}}!</p>
+  <p>Description{{city.description}}!</p>
+  <a [href]="city.url">More..!</a>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="close()">Close</button>
+</div>

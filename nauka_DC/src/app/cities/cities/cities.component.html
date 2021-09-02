@@ -1,0 +1,8 @@
+<app-city-nav></app-city-nav>
+<ng-container *ngIf="cities">
+  <div *ngFor="let city of cities" class="city">
+    <p>{{ city.name }}</p>
+    <button (click)="open(city)">Show details</button>
+    <button (click)="editCity(city.id)" >Edit</button>
+  </div>
+</ng-container>

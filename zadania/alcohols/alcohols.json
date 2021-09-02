@@ -1,0 +1,58 @@
+[
+    {
+        "class": "WhiteWine",
+        "value": {
+            "name": "Ahool Ale",
+            "percents": 33
+        }
+    },
+    {
+        "class": "RedWine",
+        "value": {
+            "name": "Kadarka",
+            "percents": 25
+        }
+    },
+    {
+        "class": "PureVodka",
+        "value": {
+            "name": "Bialy zubr",
+            "percents": 40
+        }
+    },
+    {
+        "class": "PureVodka",
+        "value": {
+            "name": "Pan Tadeusz",
+            "percents": 40
+        }
+    },
+    {
+        "class": "Lager",
+        "value": {
+            "name": "Zywiec",
+            "percents": 7
+        }
+    },
+    {
+        "class": "Liqueur",
+        "value": {
+            "name": "Advocat",
+            "percents": 18
+        }
+    },
+    {
+        "class": "Liqueur",
+        "value": {
+            "name": "Coconat",
+            "percents": 16
+        }
+    },
+    {
+        "class": "IPA",
+        "value": {
+            "name": "Ipa Żywiec",
+            "percents": 6
+        }
+    }
+]

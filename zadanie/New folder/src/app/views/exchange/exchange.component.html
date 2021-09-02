@@ -1,0 +1,9 @@
+
+<ng-container *ngIf="currencyResponse">
+<!--  (change)='changeCurrency(mySelect.value)'-->
+  <select (change)="selectChangeHandler($event)">
+    <option *ngFor="let currency of currencyResponse.rates" value="{{currency.base}}">{{currency.base}}</option>
+  </select>
+  <app-carousel [currency]="currencyResponse" [events]="eventsSubject.asObservable()"></app-carousel>
+  <div class="exchange" *ngFor="let currency of currencyResponse.rates">{{currency.base}} {{currency.value}}</div>
+</ng-container>

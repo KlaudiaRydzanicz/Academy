@@ -1,0 +1,54 @@
+<div *ngIf="currentCourse" class="edit-form">
+  <h4>Course</h4>
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control"
+             id="name" [(ngModel)]="currentCourse.name"
+             name="name"/>
+    </div>
+    <div>
+      <label for="category">Category</label>
+      <select [(ngModel)]="currentCourse.category" name="category">
+        <option value="CSS">CSS</option>
+        <option value="HTML">HTML</option>
+        <option value="JS">JS</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="status">Status</label>
+      <select [(ngModel)]="currentCourse.status" class="form-select" name="status">
+        <ng-container *ngFor=" let status of statuses.entries() ; let index =index">
+          <option [value]="status[0]">{{status[1].valueOf()}}</option>
+        </ng-container>
+      </select>
+    </div>
+
+    <label for="difficult">Difficult</label>
+    <select [(ngModel)]="currentCourse.difficulty" class="form-select" name="difficult">
+      <ng-container *ngFor=" let difficult of difficult.entries() ; let index =index">
+        <option [value]="difficult[0]">{{difficult[1].valueOf()}}</option>
+      </ng-container>
+    </select>
+
+    <label for="date">Created at:</label>
+    <input type="date" id="date"
+           [(ngModel)]="currentCourse.createdAt" name="date">
+    <div>
+      <label for="description">Description</label>
+      <textarea id="description"
+                [(ngModel)]="currentCourse.description" name="description"></textarea>
+    </div>
+  </form>
+</div>
+<button type="submit" class="btn btn-primary mr-2"
+        (click)="updateCourse()">
+  Update
+</button>
+<button class="btn btn-danger mr-2"
+        (click)="deleteTutorial()">
+  Delete
+</button>
+<p>{{message}}</p>
+

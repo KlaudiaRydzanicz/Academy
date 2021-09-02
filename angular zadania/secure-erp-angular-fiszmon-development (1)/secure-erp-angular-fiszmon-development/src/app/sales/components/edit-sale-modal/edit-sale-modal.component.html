@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{title}}</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form" class="d-flex flex-column" (ngSubmit)="save()">
+    <label>
+      Product name
+      <input type="text" formControlName="product" class="form-control">
+    </label>
+    <label>
+      Price
+      <input type="number" formControlName="price" class="form-control">
+    </label>
+    <label>
+      Transaction date
+      <input type="date" formControlName="transactionDate" class="form-control">
+    </label>
+    <label>
+      Customer
+      <select class="custom-select" formControlName="customerId">
+        <option *ngFor="let customer of customers" [value]="customer.id">{{customer.name}}</option>
+      </select>
+    </label>
+    <div class="d-flex justify-content-between mt-2">
+      <button type="submit" class="btn btn-outline-primary" [disabled]="form.invalid">Update</button>
+      <button type="button" class="btn btn-outline-secondary" (click)="close()">Cancel</button>
+    </div>
+  </form>
+</div>

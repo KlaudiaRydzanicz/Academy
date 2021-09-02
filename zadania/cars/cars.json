@@ -1,0 +1,93 @@
+[
+    {
+        "make": "acura",
+        "value": {
+            "year": 2016,
+            "id": 1,
+            "horsepower": 201,
+            "model": "ilx",
+            "price": 31890
+        }
+    },
+    {
+        "make": "aston-martin",
+        "value": {
+            "year": 2015,
+            "id": 10,
+            "horsepower": 430,
+            "model": "v8-vantage",
+            "price": 109000
+        }
+    },
+    {
+        "make": "aston-martin",
+        "value": {
+            "year": 2016,
+            "id": 11,
+            "horsepower": 568,
+            "model": "vanquish",
+            "price": 287650
+        }
+    },
+    {
+        "make": "acura",
+        "value": {
+            "year": 2015,
+            "id": 1,
+            "horsepower": 201,
+            "model": "ilx",
+            "price": 31890
+        }
+    },
+    {
+        "make": "audi",
+        "value": {
+            "year": 2016,
+            "id": 12,
+            "horsepower": 150,
+            "model": "a3",
+            "price": 42050
+        }
+    },
+    {
+        "make": "audi",
+        "value": {
+            "year": 2015,
+            "id": 13,
+            "horsepower": 204,
+            "model": "a3-sportback-e-tron",
+            "price": 46800
+        }
+    },
+    {
+        "make": "audi",
+        "value": {
+            "year": 2017,
+            "id": 14,
+            "horsepower": 252,
+            "make": "audi",
+            "model": "a4",
+            "price": 41100
+        }
+    },
+    {
+        "make": "bmw",
+        "value": {
+            "year": 2016,
+            "id": 34,
+            "horsepower": 240,
+            "model": "2-series",
+            "price": 38650
+        }
+    },
+    {
+        "make": "bmw",
+        "value": {
+            "year": 2015,
+            "id": 35,
+            "horsepower": 240,
+            "model": "3-series",
+            "price": 38350
+        }
+    }
+]

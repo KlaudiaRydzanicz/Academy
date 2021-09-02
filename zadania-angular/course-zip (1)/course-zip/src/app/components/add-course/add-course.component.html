@@ -1,0 +1,45 @@
+<div class="add-course">
+  <form [formGroup]="addForm" (ngSubmit)="saveCourse()" *ngIf="!submitted">
+    <ng-container>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name"
+               formControlName="name">
+        <div>
+          <label for="category">Category</label>
+          <select formControlName="category">
+            <option value="CSS">CSS</option>
+            <option value="HTML">HTML</option>
+            <option value="JS">JS</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="status">Status</label>
+          <select formControlName="status" class="form-select">
+            <ng-container *ngFor=" let status of statuses.entries() ; let index =index">
+              <option [value]="status[0]">{{status[1]}}</option>
+            </ng-container>
+          </select>
+        </div>
+
+                  <label for="difficult">Difficult</label>
+                  <select formControlName="difficult" class="form-select">
+                    <ng-container *ngFor=" let difficult of difficult.entries() ; let index =index">
+                      <option [value]="difficult[0]">{{difficult[1]}}</option>
+                    </ng-container>
+                  </select>
+                </div>
+        <label for="date">Created at:</label>
+        <input type="date" id="date"
+               formControlName="date">
+        <div>
+          <label for="description">Description</label>
+          <textarea id="description"
+                    formControlName="description"></textarea>
+        </div>
+
+    </ng-container>
+    <button class="btn btn-primary" type="submit" [disabled]="!addForm.valid">Submit</button>
+  </form>
+</div>

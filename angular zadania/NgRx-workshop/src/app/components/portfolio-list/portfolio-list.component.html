@@ -1,0 +1,9 @@
+<p>portfolio-list works!</p>
+
+<ng-container *ngIf="portfolios$">
+  <p>Pierwszy tag p</p>
+  <div *ngFor="let portfolio of portfolios$ | async">
+    <p>{{portfolio.author}}</p>
+    <p>{{portfolio.title}}</p>
+  </div>
+</ng-container>

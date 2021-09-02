@@ -1,0 +1,30 @@
+<p>edit-hr works!</p>
+
+<div *ngIf="selectedHr" class="edit-form">
+  <h4>Course details: </h4>
+  <div *ngIf="!updated">
+  <form [formGroup]="editHrForm">
+    <label for="name">Name: </label>
+    <input
+      type="text" class="form-control" id="name"
+      [(ngModel)]="selectedHr.name" formControlName="name"/>
+    <label for="birthday">Birthday: </label>
+    <input
+      type="date" class="form-control" id="birthday"
+      [(ngModel)]="selectedHr.birthday" formControlName="birthday"/>
+    <label for="department">Department: </label>
+    <input type="text" [(ngModel)]="selectedHr.department" class="form-control" id="department"
+           formControlName="department" form="department" />
+    <label for="clearance">Clearance: </label>
+    <input type="number" class="form-control" formControlName="clearance" id="clearance" autocomplete="off" [(ngModel)]="selectedHr.clearance"/>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!editHrForm.valid"
+            (click)="updateHr()">
+      Update
+    </button>
+  </form>
+  </div>
+  <div *ngIf="updated">
+    <h4>You updated new employee successfully!</h4>
+  </div>
+</div>

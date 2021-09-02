@@ -1,0 +1,8 @@
+<app-add-lesson></app-add-lesson>
+<app-lesson-list></app-lesson-list>
+<button (click)="displayEdit()" class="btn btn-primary">Edit Course</button>
+<app-edit-course *ngIf="display"
+                   [course]="currentCourse">
+</app-edit-course>
+
+

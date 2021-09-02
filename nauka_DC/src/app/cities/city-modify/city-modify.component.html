@@ -1,0 +1,29 @@
+<app-city-nav></app-city-nav>
+<form [formGroup]="form" (ngSubmit)="modfiyCity()" class="city-form">
+  <h2>City</h2>
+
+  <label for="location">Location:
+    <input id="location" type="text" formControlName="location" autocomplete="off">
+  </label>
+
+  <label for="name">Name:
+    <input id="name" type="text" formControlName="name" autocomplete="off">
+  </label>
+
+  <label for="description">Description:
+    <input id="description" type="text" formControlName="description" autocomplete="off">
+  </label>
+
+  <label for="url">Url:
+    <input id="url" type="text" formControlName="url" autocomplete="off">
+  </label>
+  <div style="color: red;" *ngIf="errorMessage('url','pattern')">Invalid url</div>
+  <ng-container *ngIf="cityId; then modify; else add"></ng-container>
+  <ng-template #modify>
+    <button type="submit" [disabled]="this.form.invalid">Modify City</button>
+  </ng-template>
+  <ng-template #add>
+    <button type="submit" [disabled]="this.form.invalid">Add new City</button>
+  </ng-template>
+
+</form>

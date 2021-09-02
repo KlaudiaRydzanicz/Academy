@@ -1,0 +1,72 @@
+[
+    {
+        "class": "Chocolate",
+        "value": {
+            "name": "WhiteChoco",
+            "percents": 33
+        }
+    },
+    {
+        "class": "Chocolate",
+        "value": {
+            "name": "MilkChoco",
+            "percents": 25
+        }
+    },
+    {
+        "class": "Chocolate",
+        "value": {
+            "name": "BitterChoco",
+            "percents": 50
+        }
+    },
+    {
+        "class": "Chocolate",
+        "value": {
+            "name": "DarkChoco",
+            "percents": 75
+        }
+    },
+    {
+        "class": "Cakes",
+        "value": {
+            "name": "Brownie",
+            "percents": 40
+        }
+    },
+    {
+        "class": "Cakes",
+        "value": {
+            "name": "Murzynek",
+            "percents": 45
+        }
+    },
+    {
+        "class": "IceCream",
+        "value": {
+            "name": "Coconat",
+            "percents": 0
+        }
+    },
+    {
+        "class": "IceCream",
+        "value": {
+            "name": "Chocolate Ice Cream",
+            "percents": 65
+        }
+    },
+    {
+        "class": "IceCream",
+        "value": {
+            "name": "Nutella",
+            "percents": 45
+        }
+    },
+    {
+        "class": "IceCream",
+        "value": {
+            "name": "Ferrero",
+            "percents": 35
+        }
+    }
+]

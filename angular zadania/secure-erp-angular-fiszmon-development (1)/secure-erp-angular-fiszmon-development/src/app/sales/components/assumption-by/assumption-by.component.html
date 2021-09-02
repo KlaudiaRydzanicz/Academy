@@ -1,0 +1,43 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Assumption</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form" class="d-flex flex-column" (ngSubmit)="countAssumption()">
+    <label>
+      Date from
+      <input type="date" formControlName="dateFrom" class="form-control">
+    </label>
+    <label>
+      Date to
+      <input type="date" formControlName="dateTo" class="form-control">
+    </label>
+    <label>
+      Customer
+      <select class="form-control" formControlName="assumptionType">
+        <option *ngFor="let assumption of assumptionTypes" [value]="assumption.id">{{assumption.name}}</option>
+      </select>
+    </label>
+    <div class="d-flex justify-content-between mt-2">
+      <button type="submit" class="btn btn-outline-primary" [disabled]="form.invalid">Update</button>
+      <button type="button" class="btn btn-outline-secondary" (click)="close()">Cancel</button>
+    </div>
+  </form>
+  <hr/>
+  <table class="table" *ngIf="result">
+    <thead>
+    <tr>
+      <th scope="col">Assumption type</th>
+      <th scope="col">Result</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{result.assumption}}</td>
+      <td>{{result.result}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

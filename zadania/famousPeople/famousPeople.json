@@ -1,0 +1,101 @@
+[
+    {
+        "class": "Writers",
+        "value": {
+            "name": "Klaudia",
+            "domain": "Romantic poema",
+            "nationality" : "English"
+        },
+        "artefact":{
+            "artefact" : "pen"
+        }
+    },
+    {
+        "class": "Writers",
+        "value": {
+            "name": "Karolina",
+            "domain": "Prose",
+            "nationality" : "English"
+        },
+        "artefact":{
+            "artefact" : "computer"
+        }
+    },
+    {
+        "class": "Writers",
+        "value": {
+            "name": "Lucyna",
+            "domain": "Stories",
+            "nationality" : "English"
+        },
+        "artefact":{
+            "artefact" : "mobile"
+        }
+    },
+    {
+        "class": "Mathematicans",
+        "value": {
+            "name": "Artur",
+            "domain": "Geometry",
+            "nationality" : "Polish"
+        },
+        "artefact":{
+            "artefact" : "square"
+        }
+    },
+    {
+        "class": "Mathematicans",
+        "value": {
+            "name": "Szymon",
+            "domain": "Analize",
+            "nationality" : "Polish"
+        },
+        "artefact":{
+            "artefact" : "Calculator"
+        }
+    },
+    {
+        "class": "Mathematicans",
+        "value": {
+            "name": "Paweł",
+            "domain": "Statistic",
+            "nationality" : "English"
+        },
+        "artefact":{
+            "artefact" : "graf"
+        }
+    },
+    {
+        "class": "Generals",
+        "value": {
+            "name": "Dominik",
+            "domain": "Battle",
+            "nationality" : "English"
+        },
+        "artefact":{
+            "artefact" : "Gun"
+        }
+    },
+    {
+        "class": "Generals",
+        "value": {
+            "name": "Bożka",
+            "domain": "War",
+            "nationality" : "English"
+        },
+        "artefact":{
+            "artefact" : "cannon"
+        }
+    },
+    {
+        "class": "Generals",
+        "value": {
+            "name": "Mateusz",
+            "domain": "stalking",
+            "nationality" : "English"
+        },
+        "artefact":{
+            "artefact" : "arc"
+        }
+    }
+]

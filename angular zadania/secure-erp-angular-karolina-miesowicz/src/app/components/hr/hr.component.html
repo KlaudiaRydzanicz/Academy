@@ -1,0 +1,169 @@
+<h3>HUMAN RESOURCES </h3>
+<button class="btn btn-outline-success" (click)="open(addEmployee)">New employee</button>
+<button class="btn btn-outline-info" (click)="open(average)">Age Average</button>
+<button class="btn btn-outline-info" (click)="open(oldYoung)">Oldest & youngest</button>
+<button class="btn btn-outline-info" (click)="open(perDepartment)">Count per department</button>
+<button class="btn btn-outline-warning" (click)="open(nextBirthday)">Next birthday</button>
+<button class="btn btn-outline-info" (click)="open(clearance)">Get number of clearanceLevel</button>
+
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Birthday date</th>
+    <th scope="col">Department</th>
+    <th scope="col">Clearance level</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let oneHr of hr">
+    <td>{{oneHr.id}}</td>
+    <td>{{oneHr.name}}</td>
+    <td>{{oneHr.birthday | date:'yyyy-MM-dd'}}</td>
+    <td>{{oneHr.department}}</td>
+    <td>{{oneHr.clearance}}</td>
+    <td>
+      <button class="btn btn-outline-danger" (click)="selectedHr = oneHr; open(delete)">delete</button>
+      <button class="btn btn-outline-info" (click)="selectedHr = oneHr; open(editEmployee)">edit</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+<ng-template #average let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-average-title">Age average</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    The average age of employees: <b>{{countAverage()}}</b>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn close-add-course btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #oldYoung let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-oldYoung-title">The oldest & the youngest employee</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    The oldest employee: <b>{{getOldest()}}</b>
+    <hr/>
+    The youngest employee: <b>{{getYoungest()}}</b>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn close-add-course btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #perDepartment let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-perDepartment-title">The number of employees per department</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div *ngFor="let department of countDepartment | keyvalue">
+      Department: <b>{{department.key}}</b> -> <b>{{department.value}}</b>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn close-add-course btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #nextBirthday let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-nextBirthday-title">The employees that having birthday within the two weeks</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <input type="date" [(ngModel)]='myDate' (change)="showNextBirthday()"/>
+    <hr/>
+    <p *ngFor="let birthdayHr of nextBirthdaysHr"> <b>{{birthdayHr.name}}</b> has birthday on <b>{{birthdayHr.birthday | date: 'd MMMM'}}</b></p><br/>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn close-add-course btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #clearance let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-clearance-title">Number of employees with at least the given clearance level</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <input placeholder="Type a clearance level" type="number" min="0" [(ngModel)]='clearanceLevel' (change)="countClearanceNumber()"/>
+    <hr/>
+    <p>We have <b>{{clearanceNumber}}</b> employee(s) with equal and more than <b>{{clearanceLevel}}</b> clearance!</p>
+<!--    <p *ngFor="let birthdayHr of nextBirthdaysHr"> <b>{{birthdayHr.name}}</b> has birthday on <b>{{birthdayHr.birthday | date: 'd MMMM'}}</b></p><br/>-->
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn close-add-course btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #addEmployee let-modal >
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-add-title">Add employee</h4>
+    <button type="button" class="close" aria-labelledby="coursesModal" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-add-hr [modal]="modal"></app-add-hr>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark close-add-lesson" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #editEmployee let-modal >
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-edit-title">Edit employee</h4>
+    <button type="button" class="close" aria-labelledby="coursesModal" aria-label="Close" (click)="modal.dismiss('Cross click'); refreshList()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-edit-hr [modal]="modal"></app-edit-hr>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark close-add-lesson" (click)="modal.close('Save click'); refreshList()">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #delete let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-delete-title">Employee delete</h4>
+    <button type="button" class="close" aria-describedby="modal-delete-title" aria-label="Close"
+            (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div *ngIf="selectedHr" class="modal-body">
+    <p><strong>Are you sure you want to delete <span class="text-primary">"{{selectedHr.name}}"</span>
+      course?</strong></p>
+    <p>All information associated to this employee will be permanently deleted.
+      <span class="text-danger">This operation can not be undone.</span>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+    <button type="button" class="btn btn-danger" (click)="deleteFunction(modal)">Ok</button>
+  </div>
+</ng-template>
